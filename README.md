@@ -5,15 +5,13 @@
 <br />
 1)动态库仅支持iOS8.0以上，如果要支持7.x还是要编译静态库；
 <br /> 
-2)进行universal版本编译时，参考文章里面提供的合并脚本有问题，编译出来的framework在真机上无法运行，提示错误：
+2)进行universal版本编译时，参考文章里面提供的合并脚本有问题，编译出来的framework在真机上无法运行，提示如下错误。
 <br />
-<preview><code>
+<code>
 /Users/yixiaoluo/ProjectProject/Demo1/Build/Products/Debug-iphoneos/GBKitDemo.app/Frameworks/GBKit.framework: unsealed contents present in the root directory of an embedded framework 
-<preview /><code />
-<br />
-这里提供一个版本:
-<br />
-<preview><code>
+<code /><br />
+这里提供一个版本:<br />
+<code>
 # Sets the target folders and the final framework product.
 FMK_NAME=${PROJECT_NAME}
 # Install dir will be the final output to the framework.
@@ -38,4 +36,4 @@ cp -R "${DEVICE_DIR}/" "${INSTALL_DIR}/"
 lipo -create "${DEVICE_DIR}/${FMK_NAME}" "${SIMULATOR_DIR}/${FMK_NAME}" -output "${INSTALL_DIR}/${FMK_NAME}"
 #rm -r "${WRK_DIR}"
 open "${INSTALL_DIR}"
-<code/><preview />
+<code/>
