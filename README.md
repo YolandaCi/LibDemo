@@ -10,7 +10,9 @@
 <preview><code>
 /Users/yixiaoluo/ProjectProject/Demo1/Build/Products/Debug-iphoneos/GBKitDemo.app/Frameworks/GBKit.framework: unsealed contents present in the root directory of an embedded framework 
 <preview /><code />
+<br />
 这里提供一个版本:
+<br />
 <preview><code>
 # Sets the target folders and the final framework product.
 FMK_NAME=${PROJECT_NAME}
