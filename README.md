@@ -1,6 +1,6 @@
 # 动态库和静态库demo
 参考文章：<br />
-1) http://www.samirchen.com/create-a-framework/
+1) http://www.samirchen.com/create-a-framework/ <br />
 2) http://blog.db-in.com/universal-framework-for-ios/
 # 注意点：
 <br />
