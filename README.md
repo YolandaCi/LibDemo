@@ -7,6 +7,6 @@
 <br /> 
 2)进行universal版本编译时，参考文章里面提供的合并脚本有问题，编译出来的framework在真机上无法运行，提示如下错误(工程demo里提供了另一个新的脚本):
 <br />
-<code>
+<pre><code>
 /Users/yixiaoluo/ProjectProject/Demo1/Build/Products/Debug-iphoneos/GBKitDemo.app/Frameworks/GBKit.framework: unsealed contents present in the root directory of an embedded framework 
-<code />
+</code></pre>
