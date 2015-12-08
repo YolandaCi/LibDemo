@@ -21,9 +21,13 @@
     
     GBPerson *person = [GBPerson new];
     NSLog(@"%@", person.description);
-    
-
 }
+
+- (IBAction)openViewInDylib:(id)sender {
+    GBViewController *vc = [[GBViewController alloc] init];
+    [self presentViewController:vc animated:YES completion:nil];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

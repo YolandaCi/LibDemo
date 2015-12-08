@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "GBPerson.h"
+#import <GBKit/GBPerson.h>
+#import <GBKit/GBViewController.h>
 
 //! Project version number for GBKit.
 FOUNDATION_EXPORT double GBKitVersionNumber;

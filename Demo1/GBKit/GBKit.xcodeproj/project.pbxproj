@@ -22,6 +22,10 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		3130C73B1C16B5C1007A0084 /* GBViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3130C7371C16B5C1007A0084 /* GBViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3130C73C1C16B5C1007A0084 /* GBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3130C7381C16B5C1007A0084 /* GBViewController.m */; };
+		3130C73D1C16B5C1007A0084 /* GBViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3130C7391C16B5C1007A0084 /* GBViewController.xib */; };
+		3130C73E1C16B5C1007A0084 /* img_02@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3130C73A1C16B5C1007A0084 /* img_02@2x.png */; };
 		31E367B91C15586900F2758C /* GBKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 31E367B81C15586900F2758C /* GBKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		31E367C21C15587E00F2758C /* GBPerson.h in Headers */ = {isa = PBXBuildFile; fileRef = 31E367C01C15587E00F2758C /* GBPerson.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		31E367C31C15587E00F2758C /* GBPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 31E367C11C15587E00F2758C /* GBPerson.m */; };
@@ -38,6 +42,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3130C7371C16B5C1007A0084 /* GBViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBViewController.h; sourceTree = "<group>"; };
+		3130C7381C16B5C1007A0084 /* GBViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBViewController.m; sourceTree = "<group>"; };
+		3130C7391C16B5C1007A0084 /* GBViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GBViewController.xib; sourceTree = "<group>"; };
+		3130C73A1C16B5C1007A0084 /* img_02@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_02@2x.png"; sourceTree = "<group>"; };
 		31E367B51C15586900F2758C /* GBKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GBKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		31E367B81C15586900F2758C /* GBKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GBKit.h; sourceTree = "<group>"; };
 		31E367BA1C15586900F2758C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -78,6 +86,10 @@
 				31E367B81C15586900F2758C /* GBKit.h */,
 				31E367C01C15587E00F2758C /* GBPerson.h */,
 				31E367C11C15587E00F2758C /* GBPerson.m */,
+				3130C7371C16B5C1007A0084 /* GBViewController.h */,
+				3130C7381C16B5C1007A0084 /* GBViewController.m */,
+				3130C7391C16B5C1007A0084 /* GBViewController.xib */,
+				3130C73A1C16B5C1007A0084 /* img_02@2x.png */,
 				31E367BA1C15586900F2758C /* Info.plist */,
 			);
 			path = GBKit;
@@ -91,6 +103,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				31E367B91C15586900F2758C /* GBKit.h in Headers */,
+				3130C73B1C16B5C1007A0084 /* GBViewController.h in Headers */,
 				31E367C21C15587E00F2758C /* GBPerson.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -156,6 +169,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3130C73E1C16B5C1007A0084 /* img_02@2x.png in Resources */,
+				3130C73D1C16B5C1007A0084 /* GBViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,7 +188,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Sets the target folders and the final framework product.\nFMK_NAME=${PROJECT_NAME}\n# Install dir will be the final output to the framework.\n# The following line create it in the root folder of the current project.\nINSTALL_DIR=${SRCROOT}/Products/${FMK_NAME}.framework\n# Working dir will be deleted after the framework creation.\nWRK_DIR=build\nDEVICE_DIR=${WRK_DIR}/Release-iphoneos/${FMK_NAME}.framework\nSIMULATOR_DIR=${WRK_DIR}/Release-iphonesimulator/${FMK_NAME}.framework\n# -configuration ${CONFIGURATION}\n# Clean and Building both architectures.\nxcodebuild -configuration \"Release\" -target \"${FMK_NAME}\" -sdk iphoneos clean build\nxcodebuild -configuration \"Release\" -target \"${FMK_NAME}\" -sdk iphonesimulator clean build\n# Cleaning the oldest.\nif [ -d \"${INSTALL_DIR}\" ]\nthen\nrm -rf \"${INSTALL_DIR}\"\nfi\nmkdir -p \"${INSTALL_DIR}\"\ncp -R \"${DEVICE_DIR}/\" \"${INSTALL_DIR}/\"\n# Uses the Lipo Tool to merge both binary files (i386 + armv6/armv7) into one Universal final product.\nlipo -create \"${DEVICE_DIR}/${FMK_NAME}\" \"${SIMULATOR_DIR}/${FMK_NAME}\" -output \"${INSTALL_DIR}/${FMK_NAME}\"\nrm -r \"${WRK_DIR}\"\nopen \"${INSTALL_DIR}\"";
+			shellScript = "# Sets the target folders and the final framework product.\nFMK_NAME=${PROJECT_NAME}\n# Install dir will be the final output to the framework.\n# The following line create it in the root folder of the current project.\nINSTALL_DIR=${SRCROOT}/Products/${FMK_NAME}.framework\n# Working dir will be deleted after the framework creation.\nWRK_DIR=build\nDEVICE_DIR=${WRK_DIR}/Release-iphoneos/${FMK_NAME}.framework\nSIMULATOR_DIR=${WRK_DIR}/Release-iphonesimulator/${FMK_NAME}.framework\n# -configuration ${CONFIGURATION}\n# Clean and Building both architectures.\nxcodebuild -configuration \"Release\" -target \"${FMK_NAME}\" -sdk iphonesimulator clean build\n# xcodebuild -configuration \"Release\" -target \"${FMK_NAME}\" -sdk iphoneos clean build\n\n# Cleaning the oldest.\n#if [ -d \"${INSTALL_DIR}\" ]\n#then\n#rm -rf \"${INSTALL_DIR}\"\n#fi\n#mkdir -p \"${INSTALL_DIR}\"\n#cp -R \"${DEVICE_DIR}/\" \"${INSTALL_DIR}/\"\n# Uses the Lipo Tool to merge both binary files (i386 + armv6/armv7) into one Universal final product.\n#lipo -create \"${DEVICE_DIR}/${FMK_NAME}\" \"${SIMULATOR_DIR}/${FMK_NAME}\" -output \"${INSTALL_DIR}/${FMK_NAME}\"\n#rm -r \"${WRK_DIR}\"\nopen \"${SIMULATOR_DIR}\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -183,6 +198,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				31E367C31C15587E00F2758C /* GBPerson.m in Sources */,
+				3130C73C1C16B5C1007A0084 /* GBViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
